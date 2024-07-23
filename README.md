@@ -1,4 +1,60 @@
 
-# Dotnet Devcontainer Template
+# Blazor ToDo App
 
-A template repo for using devcontainers to do dotnet learnings.
+[Razor Syntax Reference](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-8.0)
+
+### Handling events
+
+Use `@on<event>`
+
+```html
+<button class="btn btn-primary" @onclick="() => currentCount++">Click me</button>
+```
+
+```html
+<input @onchange="InputChanged" />
+<p>@message</p>
+
+@code {
+    string message = "";
+
+    void InputChanged(ChangeEventArgs e)
+    {
+        message = (string)e.Value;
+    }
+}
+```
+
+### Data binding
+
+```html
+<input @bind="text" />
+<button @onclick="() => text = string.Empty">Clear</button>
+<p>@text</p>
+
+@code {
+    string text = "";
+}
+```
+
+### Interactive mode
+
+Rendering on the server over websockets
+
+```
+@rendermode InteractiveServer
+```
+
+Use `InteractiveWebAssembly` to render from the client.
+
+### Todo list page
+
+```bash
+mkdir BlazorToDo
+cd BlazorToDo
+dotnet new blazor
+```
+
+```bash
+dotnet new razorcomponent -n Todo -o Components/Pages
+```
