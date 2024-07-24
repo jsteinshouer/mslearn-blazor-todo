@@ -3,6 +3,8 @@
 
 [Razor Syntax Reference](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-8.0)
 
+[Blazor Sample Apps](https://github.com/dotnet/blazor-samples)
+
 ### Handling events
 
 Use `@on<event>`
